@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.pnpm-store/
+.tmp-data/
+server/data/state.json
+server/data/*.corrupt-*
+.env
+.env.local
+*.log
+screenshots/
+.DS_Store
+Thumbs.db

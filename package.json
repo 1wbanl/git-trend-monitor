@@ -1,0 +1,38 @@
+{
+  "name": "git-trend-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Git Trend Monitor — GitHub 热门项目全景仪表盘与 RAG 研究助手",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,green \"node --watch server/index.js\" \"vite --host 127.0.0.1 --port 5173\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:web": "vite --host 127.0.0.1 --port 5173",
+    "build": "tsc --noEmit && vite build",
+    "start": "node server/index.js",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "test:chat": "node scripts/chat-smoke.mjs",
+    "test:ui": "node scripts/visual-test.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "playwright-core": "^1.64.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  }
+}
